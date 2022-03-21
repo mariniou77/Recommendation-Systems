@@ -36,11 +36,15 @@ def computeMean_Median_ModeRating(name):
     else:
         # find the sum of the 2 numbers in the middle of the sorted list and devide them by 2
         median = sum(sorted(dt_list)[index -1:index + 1]) / 2    
+    # calculate the mode of the ratings
+    # this will return the element that occurs the maximum times in the given list
+    mode = (max(set(dt_list), key = dt_list.count))
 
-    return mean, median      
+    return mean, median, mode      
 
-# pain programm that calls the function with the name of the file 
+# main programm that calls the function with the name of the file 
 dataset = "Exercise_1/datasets/ratings.csv"    
-avg, med = computeMean_Median_ModeRating(dataset)  
+avg, med, mod = computeMean_Median_ModeRating(dataset)  
 print("This is the average rating of the movies : " + str(avg)) 
 print("This is the median rating of the movies : " + str(med)) 
+print("This is the mode rating of the movies : " + str(mod))
