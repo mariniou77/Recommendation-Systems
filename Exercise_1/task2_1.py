@@ -9,6 +9,7 @@ with open(dataset) as d:
 # extract the 3rd column which is the rating and store it in the list after converting it to float
 for rate in lines:
     rating = rate.split(",")
+    # get rid of the header
     if rating[2] != "rating":
         dt_list.append(float(rating[2]))
 
