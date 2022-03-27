@@ -11,7 +11,8 @@ print(type(dtf))
 # Print the information about the first and the last movie in the dataset
 first = dtf.iloc[0]
 last = dtf.iloc[-1]
-print("First movie :\n-----------------------\n", first,"\n\nLast movie :\n-----------------------\n", last)
+print("First movie :\n-----------------------\n", first,\
+      "\n\nLast movie :\n-----------------------\n", last)
 
 # Show the information about the movie “Jumanji”
 movie = dtf.loc[dtf['title'] == 'Jumanji']
@@ -36,7 +37,8 @@ def to_float(x):
    
 smaller_dtf = dtf[['title', 'release_date', 'popularity', 'revenue', 'runtime', 'genres']].copy()
 smaller_dtf.loc['release_date'] = pd.to_datetime(smaller_dtf['release_date'], errors='coerce')
-smaller_dtf['release_year'] = smaller_dtf['release_date'].apply(lambda x: str(x).split('-')[0] if x != np.nan else np.nan)
+smaller_dtf['release_year'] = smaller_dtf['release_date']\
+    .apply(lambda x: str(x).split('-')[0] if x != np.nan else np.nan)
 smaller_dtf['release_year'] = smaller_dtf['release_year'].apply(to_float)
 smaller_dtf['release_year'] = smaller_dtf['release_year'].astype('float')
 smaller_dtf = smaller_dtf.drop(columns="release_date") 
