@@ -1,6 +1,8 @@
 import pandas as pd
 
-data = [['Toy Story',21.946943],['Jumanji',17.015539],['Grumpier Old Men',11.7129]]
+data = [['Toy Story',21.946943],
+        ['Jumanji',17.015539],
+        ['Grumpier Old Men',11.7129]]
 
 # Create a DataFrame object from the nested list with column headings ‘title’ and ‘popularity’
 dtf = pd.DataFrame(data, columns=('title', 'popularity'))
